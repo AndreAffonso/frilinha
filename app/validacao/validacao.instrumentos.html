@@ -1,0 +1,224 @@
+<ng-include src="'../menu/menu.html'">
+</ng-include>
+
+
+  <p class="card-panel" style="width: 35%;">
+  <br>
+  Código do Instrumento: {{ ValidacaoInstrumentoAs.validacaoInstrumentos.instrumento.ins_cod}}
+  <br>
+  Descrição: {{ ValidacaoInstrumentoAs.validacaoInstrumentos.instrumento.ins_prdescricao}}
+  <br>
+  Localização: {{ ValidacaoInstrumentoAs.validacaoInstrumentos.instrumento.ins_localservico}}
+  <br>
+  Setor: {{ ValidacaoInstrumentoAs.validacaoInstrumentos.instrumento.ins_setor}}
+  <br>
+  Situação: {{ ValidacaoInstrumentoAs.validacaoInstrumentos.instrumento.ins_observacao}}
+  <br>
+  Data de Calibração de: {{ ValidacaoInstrumentoAs.validacaoInstrumentos.instrumento.ins_dtinc | date: 'dd-MM-yyyy'}} &nbsp;
+  Até: {{ ValidacaoInstrumentoAs.validacaoInstrumentos.instrumento.ins_dtalt | date: 'dd-MM-yyyy'}}
+  </p>
+
+<table class="highlight" style="width: 70%;">
+
+        <thead>
+          <tr>
+              <th data-field="codigo">Código</th>
+              <th data-field="dataCalibracao">Data Calibração</th>
+              <th data-field="codigoInstrumento">Código Instrumento</th>
+              <th data-field="instrumentoPrcod">Instrumento prcod</th>
+              <th data-field="instrumentoPrsdcond">Instrumento prsdcond</th>
+              <th data-field="instrumentoPcod">Instrumento pcod</th>
+              <th data-field="instrumentoDescricao">Instrumento Descrição</th>
+              <th data-field="instrumentoPrdtinc">Instrumento prdtinc</th>
+              <th data-field="instrumentoLocal">Instrumento Local</th>
+              <th data-field="instrumentoTag">Instrumento Tag</th>
+              <th data-field="instrumentoNumSerie">Instrumento n° de Série</th>
+              <th data-field="instrumentoPeriodicidade">Instrumento Periodicidade</th>
+              <th data-field="instrumentoDtult">Instrumento dtult</th>
+              <th data-field="instrumentoProxCalibracao">Instrumento Próxima Calibração</th>
+              <th data-field="instrumentoNumCertificado">Instrumento N° Certificado</th>
+              <th data-field="instrumentoObs">Instrumento Observação</th>
+              <th data-field="instrumentoMarca">Instrumento Marca</th>
+              <th data-field="instrumentoDtinc">Instrumento dtinc</th>
+              <th data-field="instrumentoDtalt">Instrumento dtalt</th>
+              <th data-field="instrumentoUsuario">Instrumento Usuário</th>
+              <th data-field="instrumentoCodinterno">Instrumento codinterno</th>
+              <th data-field="instrumentoDesc">Instrumento Descrição</th>
+              <th data-field="instrumentoLocalizacao">Instrumento Localização</th>
+              <th data-field="instrumentoModelo">Instrumento Modelo</th>
+              <th data-field="instrumentoSetor">Instrumento Setor</th>
+              <th data-field="instrumentoPontos">Instrumento Pontos</th>
+              <th data-field="instrumentoResolucao">Instrumento Resolução</th>
+              <th data-field="instrumentoAceitacao">Instrumento Aceitação</th>
+              <th data-field="instrumentoTolerancia">Instrumento Tolerância</th>
+
+
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="validacaoInstrumento in ValidacaoInstrumentoAs">
+            <td>
+              {{validacaoInstrumento.cal_cod}}
+            </td>
+            <td>
+              {{validacaoInstrumento.cal_datacalibracao | date: 'dd-MM-yyyy'}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_cod}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_prcod}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_prsdcond}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_pecod}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_prdescricao}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_prdtinc | date: 'dd-MM-yyyy'}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_prativo}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_localservico}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_tag}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_nro_serie}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_periodicidade}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_dtult | date: 'dd-MM-yyyy'}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_dtprox_calibracao | date: 'dd-MM-yyyy'}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_nro_certificacao}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_observacao}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_marca}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_dtinc | date: 'dd-MM-yyyy'}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_dtalt | date: 'dd-MM-yyyy'}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_usuario}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_codinterno}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_compdescricao}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_localizacao}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_modelo}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_setor}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_pontos}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_resolucao}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_aceitacao}}
+            </td>
+            <td>
+              {{validacaoInstrumento.instrumento.ins_tolerancia}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br/><br/><br/>
+
+      <table class="highlight" style="width: 70%;">
+              <thead>
+                <tr>
+                    <th data-field="pontos">Pontos</th>
+                    <th data-field="unidade">Unidade</th>
+                    <th data-field="criAceitacao">Critério Aceitação</th>
+                    <th data-field="errIncerteza">Erro + Incerteza</th>
+                    <th data-field="validar">Validar</th>
+                    <th data-field="situacao">Status</th>
+
+
+
+                    <!-- <th data-field="codigo">Código</th>
+                    <th data-field="titulo">Título</th>
+                    <th data-field="civm">Ci VM</th>
+                    <th data-field="civr">Ci VR</th>
+                    <th data-field="erro">Erro</th>
+                    <th data-field="incerteza">Incerteza</th> -->
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr ng-repeat="calibracaoIten in ValidacaoInstrumentoAs.calibracaoItens">
+                  <td class="row">
+                      <div class="input-field col s2">
+                        <input type="text" class="validate">
+                        <label for="pontos">Pontos</label>
+                      </div>
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_unidade}}
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_criterio_aceitacao}}
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_erro_incerteza}}
+                  </td>
+                  <td>
+                    Validar ?
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_situacao}}
+                  </td>
+
+
+
+                  <!-- <td>
+                    {{calibracaoIten.ci_cod}}
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_titulo}}
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_vm}}
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_vr}}
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_erro}}
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_incerteza}}
+                  </td> -->
+                </tr>
+              </tbody>
+            </table>

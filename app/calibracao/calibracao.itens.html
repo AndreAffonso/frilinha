@@ -1,0 +1,54 @@
+<ng-include src="'../menu/menu.html'">
+</ng-include>
+
+<table class="highlight" style="width: 70%;">
+        <thead>
+          <tr>
+              <th data-field="codigo">Código</th>
+              <th data-field="titulo">Título</th>
+              <th data-field="civm">Ci VM</th>
+              <th data-field="civr">Ci VR</th>
+              <th data-field="erro">Erro</th>
+              <th data-field="incerteza">Incerteza</th>
+              <th data-field="unidade">Unidade</th>
+              <th data-field="errIncerteza">Erro Incerteza</th>
+              <th data-field="criAceitacao">Critério Aceitação</th>
+              <th data-field="situacao">Situação</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="calibracaoIten in calibracaoItens">
+            <td>
+              {{calibracaoIten.ci_cod}}
+            </td>
+            <td>
+              {{calibracaoIten.ci_titulo}}
+            </td>
+            <td>
+              {{calibracaoIten.ci_vm}}
+            </td>
+            <td>
+              {{calibracaoIten.ci_vr}}
+            </td>
+            <td>
+              {{calibracaoIten.ci_erro}}
+            </td>
+            <td>
+              {{calibracaoIten.ci_incerteza}}
+            </td>
+            <td>
+              {{calibracaoIten.ci_unidade}}
+            </td>
+            <td>
+              {{calibracaoIten.ci_erro_incerteza}}
+            </td>
+            <td>
+              {{calibracaoIten.ci_criterio_aceitacao}}
+            </td>
+            <td>
+              {{calibracaoIten.ci_situacao}}
+            </td>
+          </tr>
+        </tbody>
+      </table>

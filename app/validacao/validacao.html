@@ -1,0 +1,62 @@
+<ng-include src="'../menu/menu.html'">
+</ng-include>
+
+
+<table class="highlight" style="width: 70%;">
+        <thead>
+          <tr>
+              <th data-field="codigo">Código</th>
+              <th data-field="descricao">Descrição</th>
+              <th data-field="calibragem">Data Calibração</th>
+              <th data-field="periodicidade">Periodicidade (Meses)</th>
+              <th data-field="localizacao">Localização</th>
+              <th data-field="setor">Setor</th>
+              <th data-field="certificado">Certificado</th>
+              <th data-field="situacao">Situação</th>
+              <th data-field="validadoPor">Validado Por</th>
+              <th data-field="dataValidacao">Data Validação</th>
+              <th data-field="relatorioValidacao">Relatório Validação</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="validacao in validacoes">
+            <td>
+              {{validacao.va_cod}}
+            </td>
+            <td>
+              {{validacao.ins_prdescricao}}      <!-- Atributos/Campo da tabela INSTRUMENTO! Pegar dela mesmo ?! Se sim, os nomes dos atributos estão de acordo com a tabela  -->
+            </td>
+            <td>
+              {{validacao.ins_marca}}      <!-- Atributos/Campo da tabela INSTRUMENTO! Pegar dela mesmo ?! Se sim, os nomes dos atributos estão de acordo com a tabela  -->
+            </td>
+            <td>
+              {{validacao.ins_modelo}}      <!-- Atributos/Campo da tabela INSTRUMENTO! Pegar dela mesmo ?! Se sim, os nomes dos atributos estão de acordo com a tabela  -->
+            </td>
+            <td>
+              {{validacao.ins_nro_serie}}      <!-- Atributos/Campo da tabela INSTRUMENTO! Pegar dela mesmo ?! Se sim, os nomes dos atributos estão de acordo com a tabela  -->
+            </td>
+            <td>
+              {{validacao.ins_localizacao}}       <!-- Atributos/Campo da tabela INSTRUMENTO! Pegar dela mesmo ?! Se sim, os nomes dos atributos estão de acordo com a tabela  -->
+            </td>
+            <td>
+              {{validacao.ins_setor}}      <!-- Atributos/Campo da tabela INSTRUMENTO! Pegar dela mesmo ?! Se sim, os nomes dos atributos estão de acordo com a tabela  -->
+            </td>
+            <td>
+              {{validacao.ins_nro_certificacao}}  <!-- Atributos/Campo da tabela INSTRUMENTO! Pegar dela mesmo ?! Se sim, os nomes dos atributos estão de acordo com a tabela  -->
+            </td>
+            <td>
+              {{validacao.va_situcao}}
+            </td>
+            <td>
+              {{validacao.va_usuario}}
+            </td>
+            <td>
+              {{validacao.va_data}}
+            </td>
+            <td>
+              {{validacao.va_cal_cod}} <!-- Relatório Validação, é esse aqui mesmo?!?! Não foi encontrado o atributo relatorioValidacao da tabela!.... -->
+            </td>
+          </tr>
+        </tbody>
+      </table>

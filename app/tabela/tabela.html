@@ -1,0 +1,59 @@
+<table class="highlight" style="width: 70%;">
+        <thead>
+          <tr>
+              <th data-field="cofigo">Código</th>
+              <th data-field="descricao">Descrição</th>
+              <th data-field="marca">Marca</th>
+              <th data-field="modelo">Modelo</th>
+              <th data-field="numSerie">Nº de Série</th>
+              <th data-field="localizacao">Localização</th>
+              <th data-field="setor">Setor</th>
+              <th data-field="periodicidade">Periodicidade (Meses)</th>
+              <th data-field="ultimaCalibragem">Data Última Calibração</th>
+              <th data-field="certificado">Certificado</th>
+              <th data-field="vencimento">Data de Vencimento</th>
+              <th data-field="situacao">Situação</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="produto in produtos">
+            <td>
+              {{produto.codigo}}
+            </td>
+            <td>
+              {{produto.descricao}}
+            </td>
+            <td>
+              {{produto.marca}}
+            </td>
+            <td>
+              {{produto.modelo}}
+            </td>
+            <td>
+              {{produto.numSerie}}
+            </td>
+            <td>
+              {{produto.localizacao}}
+            </td>
+            <td>
+              {{produto.setor}}
+            </td>
+            <td>
+              {{produto.periodicidade}}
+            </td>
+            <td>
+              {{produto.ultimaCalibragem}}
+            </td>
+            <td>
+              {{produto.certificado}}
+            </td>
+            <td>
+              {{produto.vencimento}}
+            </td>
+            <td>
+              {{produto.situacao}}
+            </td>
+          </tr>
+        </tbody>
+      </table>

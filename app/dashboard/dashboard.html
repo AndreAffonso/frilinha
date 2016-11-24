@@ -1,0 +1,59 @@
+<ng-include src="'../menu/menu.html'">
+</ng-include>
+
+
+<table class="highlight" style="width: 70%;">
+        <thead>
+          <tr>
+              <th data-field="codigo">Código</th>
+              <th data-field="descricao">Descrição</th>
+              <th data-field="dataCalibracao">Data Calibração</th>
+              <th data-field="periodidade">Periodidade (Meses)</th>
+              <th data-field="localização">Localização</th>
+              <th data-field="setor">Setor</th>
+              <th data-field="certificado">Certificado</th>
+              <th data-field="situacao">Situação</th>
+              <!-- <th data-field="validadoPor">Validado Por</th>
+              <th data-field="dataValidacao">Data da Validação</th>
+              <th data-field="relatorioValidacao">Relatório de Validação</th> -->
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="produto in produtos">
+            <td> <a href="#!/validacao/{{produto.va_cod}}">
+              {{produto.va_cod}}
+            </a> </td>
+            <td>
+              {{produto.va_cal_cod}}
+            </td>
+            <td>
+              {{produto.va_data | date: 'dd-MM-yyyy'}} <!-- campo para ULTIMA CALIBRACAO não encontrado na tabela -->
+            </td>
+            <td>
+              {{produto.cal_periodicidade}}
+            </td>
+            <td>
+              {{produto.ins_localizacao}}
+            </td>
+            <td>
+              {{produto.ins_setor}}
+            </td>
+            <td>
+              {{produto.ins_nro_certificacao}}
+            </td>
+            <td>
+              {{produto.va_situcao}}
+            </td>
+           <!--  <td>
+              {{produto.co_nome}}
+            </td>
+            <td>
+              {{produto.va_data}}
+            </td>
+            <td>
+              {{produto.va_nro_rv}}
+            </td> -->
+          </tr>
+        </tbody>
+      </table>

@@ -1,0 +1,45 @@
+<html lang="pt-br" ng-app="sisApp">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylesheet para uso do materialize -->
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css">
+
+    <!-- <link rel="stylesheet" href="bower_components/materialize/dist/js/materialize.min.js"> -->
+    <!-- <link rel="stylesheet" href="bower_components/jquery/dist/jquery.js"> -->
+
+    <!-- stylesheet para utilizar os icons (login form possui icons) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+
+  <body>
+   <!--  <ul class="menu">
+      <li><a href="#!/instrumentos">Instrumentos</a></li>
+      <li><a href="#!/validacao">Validação</a></li>
+      <li><a href="#!/relatorios">Relatórios</a></li>
+      <li><a href="#!/dashboard">Dashboard</a></li>
+
+      <li><a href="#!/login">Login</a></li>
+    </ul>
+ -->
+    <div ng-view></div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="login/login.js"></script>
+    <script src="dashboard/dashboard.js"></script>
+    <script src="instrumentos/instrumentos.js"></script>
+    <script src="validacao/validacao.js"></script>
+    <script src="relatorios/relatorios.js"></script>
+    <script src="cadastro/cadastro.js"></script>
+    <script src="tabela/tabela.js"></script>
+    <script src="calibracao/calibracao.js"></script>
+
+  </body>
+</html>

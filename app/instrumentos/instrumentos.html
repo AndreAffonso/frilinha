@@ -1,0 +1,94 @@
+<ng-include src="'../menu/menu.html'">
+</ng-include>
+
+<section>
+  <h3>Filtros</h3
+
+        <form class="filtros-form">
+          <div class="row">
+            <div class="input-field col s2">
+              <input id="codigo" type="text" ng-model="filtro_cod_empresa">
+              <label for="codigo">Código da Empresa:</label>
+            </div>
+          <!-- </div> -->
+          <!-- <div class="row"> -->
+            <div class="input-field col s2">
+              <input id="descricao" type="text" ng-model="filtro_descricao">
+              <label for="descricao">Descrição:</label>
+            </div>
+          <!-- </div> -->
+          <!-- <div class="row"> -->
+            <div class="input-field col s2">
+
+              <input id="localizacao" type="text" ng-model="filtro_localizacao">
+              <label for="localizacao">Localização:</label>
+            </div>
+          <!-- </div> -->
+          <!-- <div class="row"> -->
+            <div class="input-field col s2">
+              <input id="setor" type="text" ng-model="filtro_setor">
+              <label for="setor">Setor:</label>
+            </div>
+          </div>
+        </form>
+</section>
+
+<table class="highlight" style="width: 70%;">
+        <thead>
+          <tr>
+              <th data-field="codigo">Código</th>
+              <th data-field="descricao">Descrição</th>
+              <th data-field="marca">Marca</th>
+              <th data-field="modelo">Modelo</th>
+              <th data-field="numSerie">Nº de Série</th>
+              <th data-field="localizacao">Localização</th>
+              <th data-field="setor">Setor</th>
+              <th data-field="periodicidade">Periodicidade (Meses)</th>
+              <th data-field="vencimento">Data de Vencimento</th>
+              <th data-field="certificado">Certificado</th>
+              <th data-field="ultimaCalibragem">Data Última Calibração</th>
+              <th data-field="situacao">Situação</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="produto in produtos | filter:query">
+            <td>
+              {{produto.ins_prcod}}
+            </td>
+            <td>
+              {{produto.ins_prdescricao}}
+            </td>
+            <td>
+              {{produto.ins_marca}}
+            </td>
+            <td>
+              {{produto.ins_modelo}}
+            </td>
+            <td>
+              {{produto.ins_nro_serie}}
+            </td>
+            <td>
+              {{produto.ins_localizacao}}
+            </td>
+            <td>
+              {{produto.ins_setor}}
+            </td>
+            <td>
+              {{produto.ins_periodicidade | date: 'dd-MM-yyyy'}}
+            </td>
+            <td>
+              {{produto.ins_dtalt | date: 'dd-MM-yyyy'}} <!-- VENCIMENTO? Não está no banco esse atributo!!! -->
+            </td>
+            <td>
+              {{produto.ins_nro_certificacao}}
+            </td>
+            <td>
+              {{produto.ins_dtprox_calibracao | date: 'dd-MM-yyyy'}}
+            </td>
+            <td>
+              {{produto.ins_observacao}} <!-- Situação ou Observação!!!??? -->
+            </td>
+          </tr>
+        </tbody>
+      </table>

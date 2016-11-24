@@ -1,0 +1,63 @@
+<ng-include src="'../menu/menu.html'">
+</ng-include>
+
+
+<table class="highlight" style="width: 70%;">
+        <thead>
+          <tr>
+              <th data-field="codigo">Código</th>
+              <th data-field="descricao">Descrição</th>
+              <th data-field="marca">Marca</th>
+              <th data-field="modelo">Modelo</th>
+              <th data-field="numSerie">Nº de Série</th>
+              <th data-field="localizacao">Localização</th>
+              <th data-field="setor">Setor</th>
+              <th data-field="periodicidade">Periodicidade (Meses)</th>
+              <th data-field="ultimaCalibragem">Data Última Calibração</th>
+              <th data-field="certificado">Certificado</th>
+              <th data-field="vencimento">Data de Vencimento</th>
+              <th data-field="situacao">Situação</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="produto in produtos">
+            <td>
+              {{produto.ins_cod}}
+            </td>
+            <td>
+              {{produto.ins_prdescricao}}
+            </td>
+            <td>
+              {{produto.ins_marca}}
+            </td>
+            <td>
+              {{produto.modelo}} <!-- campo MODELO não encontrado na tabela-->
+            </td>
+            <td>
+              {{produto.ins_nro_serie}}
+            </td>
+            <td>
+              {{produto.ins_localizacao}}
+            </td>
+            <td>
+              {{produto.ins_setor}}
+            </td>
+            <td>
+              {{produto.ins_periodicidade}}
+            </td>
+            <td>
+              {{produto.ins_dtprox_calibracao | date: 'dd-MM-yyyy'}} <!-- campo para ULTIMA CALIBRACAO não encontrado na tabela-->
+            </td>
+            <td>
+              {{produto.ins_nro_certificacao}}
+            </td>
+            <td>
+              {{produto.vencimento}} <!-- campo VENCIMENTO não encontrado na tabela-->
+            </td>
+            <td>
+              {{produto.situacao}} <!-- campo SITUACAO não encontrado na tabela-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
