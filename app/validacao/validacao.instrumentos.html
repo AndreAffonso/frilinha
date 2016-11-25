@@ -16,6 +16,12 @@
   <br>
   Data de Calibração de: {{ ValidacaoInstrumentoAs.validacaoInstrumentos.instrumento.ins_dtinc | date: 'dd-MM-yyyy'}} &nbsp;
   Até: {{ ValidacaoInstrumentoAs.validacaoInstrumentos.instrumento.ins_dtalt | date: 'dd-MM-yyyy'}}
+  <br>
+  Validação Por:
+    <input name="group1" type="radio" id="pontos" value="pontos" ng-model="validacao"/>
+    <label for="pontos">Pontos</label>
+    <input name="group1" type="radio" id="calibracao" value="calibracao" ng-model="validacao"/>
+    <label for="calibracao">Calibração</label>    
   </p>
 
 <table class="highlight" style="width: 70%;">
@@ -154,7 +160,7 @@
 
       <br/><br/><br/>
 
-      <table class="highlight" style="width: 70%;">
+      <table class="highlight" style="width: 70%;" ng-show="validacao == 'pontos'">
               <thead>
                 <tr>
                     <th data-field="pontos">Pontos</th>
@@ -192,12 +198,17 @@
                   <td>
                     {{calibracaoIten.ci_erro_incerteza}}
                   </td>
-                  <td>
-                    Validar ?
+                  <td ng-hide="calibracaoIten.ci_erro_incerteza > calibracaoIten.ci_criterio_aceitacao">
+                    <input name="group1" type="radio" id="validarcaoInput" value="validarcaoInput" ng-model="validarcaoInput"/>
+                    <label for="validarcaoInput"></label>
                   </td>
-                  <td>
-                    {{calibracaoIten.ci_situacao}}
+                  <td ng-if="calibracaoIten.ci_erro_incerteza <= calibracaoIten.ci_criterio_aceitacao">
+                    Aprovado
                   </td>
+
+                  <td ng-if="calibracaoIten.ci_erro_incerteza > calibracaoIten.ci_criterio_aceitacao">
+                    Reprovado
+                  </td>                  
 
 
 
@@ -222,3 +233,82 @@
                 </tr>
               </tbody>
             </table>
+
+      <table class="highlight" style="width: 70%;" ng-show="validacao == 'calibracao'">
+              <thead>
+                <tr>
+                    <th data-field="pontos">Calibracao</th>
+                    <th data-field="unidade">Unidade</th>
+                    <th data-field="criAceitacao">Critério Aceitação</th>
+                    <th data-field="errIncerteza">Erro + Incerteza</th>
+                    <th data-field="validar">Validar</th>
+                    <th data-field="situacao">Status</th>
+
+
+
+                    <!-- <th data-field="codigo">Código</th>
+                    <th data-field="titulo">Título</th>
+                    <th data-field="civm">Ci VM</th>
+                    <th data-field="civr">Ci VR</th>
+                    <th data-field="erro">Erro</th>
+                    <th data-field="incerteza">Incerteza</th> -->
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr ng-repeat="calibracaoIten in ValidacaoInstrumentoAs.calibracaoItens">
+                  <td class="row">
+                      <div class="input-field col s2">
+                        <input type="text" class="validate">
+                        <label for="pontos">Calibração</label>
+                      </div>
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_unidade}}
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_criterio_aceitacao}}
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_erro_incerteza}}
+                  </td>
+                  <td ng-hide="calibracaoIten.ci_erro_incerteza > calibracaoIten.ci_criterio_aceitacao">
+                    <input name="group1" type="radio" id="validarcaoInput" value="validarcaoInput" ng-model="validarcaoInput"/>
+                    <label for="validarcaoInput"></label>
+                  </td>
+
+                  <td ng-if="calibracaoIten.ci_erro_incerteza <= calibracaoIten.ci_criterio_aceitacao">
+                    Aprovado
+                  </td>
+
+                  <td ng-if="calibracaoIten.ci_erro_incerteza > calibracaoIten.ci_criterio_aceitacao">
+                    Reprovado
+                  </td>                  
+<!--                   <td>
+                    {{calibracaoIten.ci_situacao}}
+                  </td>
+ -->
+
+
+                  <!-- <td>
+                    {{calibracaoIten.ci_cod}}
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_titulo}}
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_vm}}
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_vr}}
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_erro}}
+                  </td>
+                  <td>
+                    {{calibracaoIten.ci_incerteza}}
+                  </td> -->
+                </tr>
+              </tbody>
+            </table>
+
